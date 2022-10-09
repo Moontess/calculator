@@ -3,9 +3,74 @@
 }
 
 body {
-  width: 100;
+  width: 100%;
   height: 100vh;
   font-size: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+#frame {
+  width: 270px;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  color: rgb(245, 245, 245);
+  font-size: 2rem;
+}
+
+#container {
+  width: 90%;
+  height: 100%;
+  margin: auto;
   background-color: rgb(210, 180, 140);
+  border: 1px solid rgba(128, 128, 128, 0.8);
+  box-shadow: 0.01rem 9rem 20rem 0.01rem rgb(128, 128, 128);
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#show {
+  width: 95%;
+  height: 3.2rem;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+button {
+  font-weight: 800;
+  text-align: center;
+  border: 1px solid rgb(188, 143, 143);
+  border-radius: 0.3rem;
+  background-color: rgb(221, 234, 245);
+}
+
+button:hover {
+  border: none;
+  background-color: rgb(255, 250, 250);
+}
+
+#num,
+#symbol {
+  display: grid;
+  grid-template-columns: 3rem 3rem 3rem;
+  grid-template-rows: 3rem 3rem 3rem 3rem;
+  gap: 0.7rem;
+}
+
+#symbol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+  grid-template-columns: 3rem 3rem 3rem 3rem;
+  grid-template-rows: 3rem;
 }
