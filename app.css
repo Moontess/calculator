@@ -42,14 +42,15 @@ h1 {
 }
 
 #show {
-  width: 95%;
+  width: 96%;
   height: 3.2rem;
   font-size: 1.5rem;
   text-align: right;
-  padding: 0.5rem;
+  padding: 0.4rem;
   margin-top: 0.6rem;
   margin-bottom: 0.7rem;
   letter-spacing: 0.1rem;
+  border-radius: 0.2rem;
   border: 2px solid rgb(255, 255, 255);
 }
 
