@@ -29,29 +29,42 @@ document.querySelectorAll("button").forEach((each) => {
       case "+":
       case "*":
       case "/":
-        full.push(num);
+        full.push(parseInt(num));
         sign.push(a);
         num = "";
         break;
 
       case "=":
-        if (sign === "+") {
-          document.getElementById("show").innerText = Boolean(full + num);
-        } else if (sign === "-") {
-          document.getElementById("show").innerText = Boolean(full - num);
-        } else if (sign === "*") {
-          document.getElementById("show").innerText = Boolean(full * num);
-        } else if (sign === "/") {
-          document.getElementById("show").innerText = Boolean(full / num);
+        full.push(parseInt(num));
+        console.log(full);
+        console.log(num);
+        console.log(sign);
+
+        let result = full[0];
+        for (let x in num) {
+          if ([(x = 1)]) {
+            switch (num) {
+              case sign[x - 1] === "+":
+                result += full[x];
+                break;
+
+              case sign[x - 1] === "-":
+                result -= full[x];
+                break;
+
+              case sign[x - 1] === "*":
+                result *= full[x];
+                break;
+
+              case sign[x - 1] === "/":
+                result /= full[x];
+                break;
+            }
+            console.log(result);
+            document.getElementById("show").innerText += result;
+          }
         }
-
-        // document.getElementById("show").innerText = full + num;
-        break;
-
-      default:
         break;
     }
   });
 });
-
-document.getElementById("show").innerText = calc;
