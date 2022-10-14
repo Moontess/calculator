@@ -35,24 +35,34 @@ document.querySelectorAll("button").forEach((each) => {
         break;
 
       case "=":
+        sign.push(a);
         full.push(parseInt(num));
-        num = "";
+
+        console.log(full);
+        console.log(num);
+        console.log(sign);
 
         let result = full[0];
-        for (let x in full) {
-          if (x > 0) {
-            if (sign[x - 1] === "+") {
+        for (let x = 1; x < full.length; x++) {
+          switch (sign[x - 1]) {
+            case "+":
               result += full[x];
-            } else if (sign[x - 1] === "-") {
+              break;
+
+            case "-":
               result -= full[x];
-            } else if (sign[x - 1] === "/") {
-              result /= full[x];
-            } else if (sign[x - 1] === "*") {
+              break;
+
+            case "*":
               result *= full[x];
-            }
+              break;
+
+            case "/":
+              result /= full[x];
+              break;
           }
-          document.getElementById("show").innerText += result;
         }
+        document.getElementById("show").innerText += result;
         break;
     }
   });
