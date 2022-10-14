@@ -36,33 +36,22 @@ document.querySelectorAll("button").forEach((each) => {
 
       case "=":
         full.push(parseInt(num));
-        console.log(full);
-        console.log(num);
-        console.log(sign);
+        num = "";
 
         let result = full[0];
-        for (let x in num) {
-          if ([(x = 1)]) {
-            switch (num) {
-              case sign[x - 1] === "+":
-                result += full[x];
-                break;
-
-              case sign[x - 1] === "-":
-                result -= full[x];
-                break;
-
-              case sign[x - 1] === "*":
-                result *= full[x];
-                break;
-
-              case sign[x - 1] === "/":
-                result /= full[x];
-                break;
+        for (let x in full) {
+          if (x > 0) {
+            if (sign[x - 1] === "+") {
+              result += full[x];
+            } else if (sign[x - 1] === "-") {
+              result -= full[x];
+            } else if (sign[x - 1] === "/") {
+              result /= full[x];
+            } else if (sign[x - 1] === "*") {
+              result *= full[x];
             }
-            console.log(result);
-            document.getElementById("show").innerText += result;
           }
+          document.getElementById("show").innerText += result;
         }
         break;
     }
