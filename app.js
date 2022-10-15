@@ -29,18 +29,14 @@ document.querySelectorAll("button").forEach((each) => {
       case "+":
       case "*":
       case "/":
-        full.push(parseInt(num));
+        full.push(Number(num));
         sign.push(a);
         num = "";
         break;
 
       case "=":
         sign.push(a);
-        full.push(parseInt(num));
-
-        console.log(full);
-        console.log(num);
-        console.log(sign);
+        full.push(Number(num));
 
         let result = full[0];
         for (let x = 1; x < full.length; x++) {
